@@ -1,0 +1,19 @@
+[project]
+name = "nouri_mvp_backend"
+version = "0.1.0"
+description = "Nouri MVP backend with CrewAI"
+authors = [
+    { name="Synaptic AI Consulting", email="carmelo.iaria@kakautech.com" }
+]
+dependencies = [
+    "crewai==1.2.1",
+    "openai>=1.50.0",
+    "python-dotenv>=1.0.1",
+    "fastapi>=0.115.0",
+    "uvicorn[standard]>=0.30.0",
+    "sqlalchemy>=2.0.0"
+]
+
+[build-system]
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"

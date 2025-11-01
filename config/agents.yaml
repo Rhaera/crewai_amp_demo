@@ -1,0 +1,32 @@
+smart_list_manager:
+  role: Smart List Manager Agent
+  goal: Generate shopping lists based on user needs, preferences, and shopping history
+  backstory: Experienced shopping assistant focused on essentials, dietary fit, and personalized recommendations
+  llm:
+    provider: openai
+    model: gpt-4o-mini
+    temperature: 0.2
+    max_tokens: 2048
+  allow_delegation: false
+  tools:
+    - list_service.get_user_list
+    - store_service.search_across_stores
+  max_iter: 12
+  max_execution_time: 60
+
+deal_hunter:
+  role: Deal Hunter Agent
+  goal: Find best prices and active deals across multiple grocery stores
+  backstory: Savvy shopper skilled in price matching, discount hunting, and seasonal deals
+  llm:
+    provider: openai
+    model: gpt-4o-mini
+    temperature: 0.2
+    max_tokens: 2048
+  allow_delegation: false
+  tools:
+    - store_service.search_across_stores
+    - store_service.compare_prices
+    - store_service.find_best_deal
+  max_iter: 12
+  max_execution_time: 60

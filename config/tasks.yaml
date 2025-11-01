@@ -1,0 +1,20 @@
+smart_list_generation:
+  description: Generate smart shopping list for user based on history and needs
+  expected_output:
+    format: json
+    fields: [items, reasoning]
+  agent: smart_list_manager
+  context:
+    - user_id
+    - user_preferences
+    - shopping_history
+
+deal_hunting:
+  description: Search for best prices and deals for items in shopping list
+  expected_output:
+    format: json
+    fields: [comparisons, recommendations, savings]
+  agent: deal_hunter
+  context:
+    - list_items
+    - user_preferences
