@@ -12,8 +12,8 @@ class NouriCrew:
     are deferred per descoped MVP requirements.
     """
 
-    agents_config = "agents.yaml"
-    tasks_config = "tasks.yaml"
+    agents_config = "config/agents.yaml"
+    tasks_config = "config/tasks.yaml"
 
     @agent
     def smart_list_manager(self) -> Agent:
